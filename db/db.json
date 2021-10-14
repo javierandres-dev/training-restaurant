@@ -1,0 +1,52 @@
+{
+  "dishes": [
+    {
+      "id": 1,
+      "name": "soup",
+      "price": 1,
+      "category": 1
+    },
+    {
+      "id": 2,
+      "name": "salad",
+      "price": 1,
+      "category": 1
+    },
+    {
+      "id": 3,
+      "name": "sandwich",
+      "price": 1,
+      "category": 1
+    },
+    {
+      "id": 4,
+      "name": "burger",
+      "price": 1,
+      "category": 1
+    },
+    {
+      "id": 5,
+      "name": "pizza",
+      "price": 1,
+      "category": 1
+    },
+    {
+      "id": 6,
+      "name": "hot dog",
+      "price": 1,
+      "category": 1
+    },
+    {
+      "id": 7,
+      "name": "donuts",
+      "price": 1,
+      "category": 1
+    },
+    {
+      "id": 8,
+      "name": "cake",
+      "price": 1,
+      "category": 1
+    }
+  ]
+}

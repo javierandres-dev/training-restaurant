@@ -1,0 +1,43 @@
+/* DEVELOPER
+  ============================= */
+.dev {
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: lighter;
+}
+.dev a {
+  color: #05a6f1;
+}
+.dev a:link {
+  text-decoration: none;
+}
+.dev a:visited {
+  font-style: italic;
+}
+.dev a:hover {
+  text-decoration: underline;
+}
+.dev a:active {
+  font-style: italic;
+  text-decoration: underline;
+  color: gray;
+}
+.dev .top a,
+.dev .bottom a {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+}
+.dev .top a {
+  justify-content: flex-start;
+}
+.dev .bottom a {
+  justify-content: flex-end;
+}
+.dev span {
+  color: gray;
+}
+.dev img {
+  width: 32px;
+  margin: 0 8px;
+}
