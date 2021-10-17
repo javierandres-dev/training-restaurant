@@ -49,17 +49,17 @@
         type="button"
         class="btn btn-success d-block m-auto my-4"
         data-bs-toggle="modal"
-        data-bs-target="#modalNewOrder"
+        data-bs-target="#newOrder"
       >
         New Order
       </button>
     </main>
     <aside>
-      <div class="modal" tabindex="-1" id="modalNewOrder">
+      <div class="modal" tabindex="-1" id="newOrder">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">Modal title</h5>
+              <h5 class="modal-title">Restaurant App</h5>
               <button
                 type="button"
                 class="btn-close"
@@ -68,8 +68,21 @@
               ></button>
             </div>
             <div class="modal-body">
-              <p>Modal body text goes here.</p>
-              <input type="text" id="inputTable" />
+              <form
+                id="createOrder"
+                class="d-flex flex-column needs-validation"
+                novalidate
+              >
+                <label for="table">Table</label>
+                <input type="text" id="table" required />
+                <div class="invalid-feedback">Table is required</div>
+                <label for="time">Time</label>
+                <input type="time" id="time" required />
+                <div class="invalid-feedback">Time is required</div>
+                <button type="submit" class="btn btn-primary my-4">
+                  Create Order
+                </button>
+              </form>
             </div>
             <div class="modal-footer">
               <button
@@ -77,10 +90,7 @@
                 class="btn btn-secondary"
                 data-bs-dismiss="modal"
               >
-                Close
-              </button>
-              <button type="button" class="btn btn-primary">
-                Save changes
+                Cancel
               </button>
             </div>
           </div>
