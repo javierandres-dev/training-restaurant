@@ -47,16 +47,22 @@
     <main role="main">
       <button
         type="button"
-        class="btn btn-success d-block m-auto my-4"
+        class="btn btn-success d-block m-auto my-5"
         data-bs-toggle="modal"
         data-bs-target="#newOrder"
       >
         New Order
       </button>
+      <section class="d-none">
+        <h2 class="text-center">Dishes</h2>
+      </section>
+      <section class="d-none my-5">
+        <h2 class="text-center">Consumption Summary</h2>
+      </section>
     </main>
     <aside>
       <div class="modal" tabindex="-1" id="newOrder">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-sm">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title">Restaurant App</h5>
@@ -74,7 +80,7 @@
                 novalidate
               >
                 <label for="table">Table</label>
-                <input type="text" id="table" required />
+                <input type="number" id="table" required />
                 <div class="invalid-feedback">Table is required</div>
                 <label for="time">Time</label>
                 <input type="time" id="time" required />

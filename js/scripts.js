@@ -1,18 +1,22 @@
 "use strict";
 const d = document,
-  $newOrder = d.getElementById("newOrder"),
+  $newOrder = new bootstrap.Modal(document.getElementById("newOrder"), {
+    backdrop: "static",
+    focus: true,
+    keyboard: true,
+  }),
   $table = d.getElementById("table"),
   $time = d.getElementById("time"),
-  $createOrder = d.getElementById("createOrder");
+  $createOrder = d.getElementById("createOrder"),
+  $hiddenSections = d.querySelectorAll(".d-none");
 
-const customer = {
+let customer = {
   table: "",
   time: "",
-  order: [],
+  orders: [],
 };
 
-$newOrder.addEventListener("shown.bs.modal", () => $table.focus());
-$createOrder.addEventListener("submit", createOrder, false);
+$createOrder.addEventListener("submit", createOrder);
 
 function createOrder(e) {
   e.preventDefault();
@@ -20,7 +24,36 @@ function createOrder(e) {
   else {
     const table = $table.value,
       time = $time.value;
-    console.log(table, time);
+    customer = {
+      ...customer,
+      table,
+      time,
+    };
+    getDishes();
+    showHiddenSections();
+    $newOrder.hide();
   }
   $createOrder.classList.add("was-validated");
+}
+
+function showDishes(dishes) {
+  console.log(dishes);
+}
+
+async function getDishes() {
+  const URL = "http://localhost:4000/dishes";
+
+  try {
+    const res = await fetch(URL);
+    if (res.status !== 200)
+      throw new Error(res.statusText || "¡An error has occurred!");
+    const json = await res.json();
+    showDishes(json);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+function showHiddenSections() {
+  $hiddenSections.forEach((section) => section.classList.remove("d-none"));
 }
