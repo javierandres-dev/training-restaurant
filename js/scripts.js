@@ -8,7 +8,8 @@ const d = document,
   $table = d.getElementById("table"),
   $time = d.getElementById("time"),
   $createOrder = d.getElementById("createOrder"),
-  $hiddenSections = d.querySelectorAll(".d-none");
+  $hiddenSections = d.querySelectorAll(".d-none"),
+  $dishes = d.getElementById("dishes");
 
 let customer = {
   table: "",
@@ -38,6 +39,11 @@ function createOrder(e) {
 
 function showDishes(dishes) {
   console.log(dishes);
+  let html = "";
+  dishes.forEach((dish)=>{
+    html += `<li>${dish.name}</li>`
+  });
+  $dishes.innerHTML = html;
 }
 
 async function getDishes() {
